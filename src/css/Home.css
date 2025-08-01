@@ -1,0 +1,311 @@
+:root {
+    font-family: 'Inter', system-ui, sans-serif;
+  --primary-green: #91CF43;
+  --dark-green: #27600B;
+}
+.mascot-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    padding-bottom: 5rem;
+}
+
+.mascot-image {
+    max-width: 100%;
+    max-height: 450px;
+    height: auto;
+}
+.intro-section {
+    padding: 8rem 0;
+}
+
+.intro-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.intro-brand img {
+    max-width: 350px;
+}
+
+.intro-actions {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Tạo khoảng cách giữa các nút */
+}
+
+.tab-item-container {
+    min-height: 30px; /* Điều chỉnh con số này nếu cần */
+    display: flex; /* Giúp các item bên trong co giãn tốt */
+}
+
+.action-button {
+    width: 500px;
+    padding: 1rem;
+    border: 1.5px solid var(--primary-green, #91CF43);
+    background-color: var(--primary-green, #91CF43);
+    color: #368A0D;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 650;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    font-family: 'Inter', sans-serif; /* Sử dụng font Inter */
+}
+
+.action-button:hover {
+    background-color: #fff;
+    color: var(--primary-green, #91CF43);
+    transform: scale(1.02); /* Giảm scale một chút cho tinh tế */
+}
+
+/* Style cho "bong bóng" nội dung */
+.content-bubble {
+    width: 500px; /* Chiếm hết chiều rộng của container */
+    background-color: var(--primary-green, #91CF43);
+    color: #368A0D;
+    padding: 2rem;
+    padding-left: 55px;
+    padding-right: 55px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 450;
+    line-height: 1.6;
+    cursor: pointer; /* Cho người dùng biết là có thể click để đóng */
+    box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
+    animation: fadeIn 0.4s ease-out;
+    text-align: center; /* Căn giữa nội dung */
+    animation: growAndFadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    font-family: 'Inter', sans-serif; /* Sử dụng font Inter */
+}
+@keyframes growAndFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 
+ * =========================================
+ *  PHẦN 3: AI MENU (ĐÃ THÊM MỚI)
+ * =========================================
+*/
+
+.ai-menu-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 0;
+}
+.ai-menu-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Container chính, đóng vai trò là cả button và card mở rộng */
+.ai-menu-wrapper {
+    /* Trạng thái ban đầu (giống button) */
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px 50px 15px 50px;
+    background-color: var(--dark-green, #2E481A);
+    cursor: pointer;    /* Luôn là con trỏ tay để cho biết có thể click */
+    overflow: hidden; /* Quan trọng để nội dung không bị tràn ra ngoài */
+    
+    /* Hiệu ứng chuyển động cho tất cả các thuộc tính */
+    transition: all 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+/* Trạng thái khi mở rộng */
+.ai-menu-wrapper.open {
+    width: 100%;
+    max-width: 1200px;
+    height: 350px;
+    border-radius: 40px; /* Bo góc đều và lớn hơn */
+    transition: all 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* --- XỬ LÝ NỘI DUNG BÊN TRONG --- */
+
+/* Nội dung ban đầu (chữ AI Menu) */
+.ai-menu-initial-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-left: 2rem;
+    box-sizing: border-box;
+    color: var(--primary-green, #91CF43);
+    font-weight: 800;
+    line-height: 1.1;
+    transition: opacity 0.2s ease 0.7s;
+}
+/* Khi mở rộng, làm mờ nội dung này đi */
+.ai-menu-wrapper.open .ai-menu-initial-content {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.ai-menu-text-top { font-size: 4rem; }
+.ai-menu-text-bottom { font-size: 4.5rem; }
+
+
+/* Nội dung khi mở rộng (tiêu đề, mô tả, nút) */
+.ai-menu-expanded-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    opacity: 0; /* Mặc định bị ẩn */
+    pointer-events: none; /* Không thể tương tác khi đang ẩn */
+    transition: opacity 0.2s ease; /* Hiện ra sau khi container đã mở rộng xong */
+}
+/* Khi mở rộng, làm hiện nội dung này ra */
+.ai-menu-wrapper.open .ai-menu-expanded-content {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s ease 0.4s;
+}
+
+.ai-menu-title {
+    color: var(--primary-green, #91CF43);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+.ai-menu-description {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px; /* Giới hạn chiều rộng của đoạn văn */
+    margin: 1rem 0 2rem 0;
+}
+.ai-menu-details-button {
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: #E0E0E0; /* Màu xám nhạt */
+    color: var(--dark-green, #2E481A);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.ai-menu-details-button:hover {
+    transform: scale(1.05);
+}
+
+.close-ai-menu:hover {
+    transform: scale(1.2);
+}
+
+/*
+ * =========================================================
+ *  PHẦN 4: COMBO DỊCH VỤ - ĐÃ CẬP NHẬT HOÀN CHỈNH
+ * =========================================================
+*/
+.combo-section {
+    padding: 8rem 0;
+}
+
+.combo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.combo-title {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    color: var(--dark-green);
+    line-height: 0.9; 
+}
+
+.combo-title-top { font-size: 8rem; }
+.combo-title-bottom { font-size: 7.5rem; }
+
+
+.combo-packages {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.package-card {
+    width: 240px; /* Tăng chiều rộng một chút */
+    height: 140px; /* Chiều cao ban đầu */
+    padding: 1.5rem;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: var(--dark-green);
+    color: var(--primary-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+/* KHI HOVER VÀO CARD */
+.package-card:hover {
+    height: 240px; 
+    transform: translateY(-20px); /* Tăng hiệu ứng "nhấc lên" */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+.package-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    line-height: 1.1;
+}
+
+.package-title span {
+    display: block; /* Buộc mỗi span chiếm 1 dòng riêng */
+}
+
+.package-description {
+    font-size: 0.9rem; 
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+    margin-top: 0.75rem;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.package-card:hover .package-description {
+    opacity: 1;
+    max-height: 50px;
+}

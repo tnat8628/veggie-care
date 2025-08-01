@@ -1,0 +1,138 @@
+/* File: NavBar.css */
+
+/* === CẬP NHẬT MÀU CHỦ ĐẠO MỚI === */
+:root {
+  --primary-green: #91CF43; /* Màu xanh lá cây mới của bạn */
+  --text-dark: #333;
+  --text-light: #fff;
+}
+
+.header {
+  width: 100%;
+  background-color: var(--text-light);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  height: 80px;
+}
+
+/* 1. Logo */
+.navbar-logo img {
+  height: 50px;
+  display: block;
+}
+
+/* Nhóm các chức năng bên phải */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Tăng khoảng cách một chút */
+}
+
+/* GỘP CHUNG STYLE CHO CÁC LIÊN KẾT VÀ ICON */
+.nav-links,
+.nav-icons {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.nav-links a,
+.nav-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--primary-green);
+  background-color: transparent;
+  transition: all 0.3s ease;
+  border-radius: 25px 10px 25px 10px;
+}
+
+.nav-icons a {
+  font-size: 1.4rem;
+  padding: 12px;
+}
+
+.nav-links a:hover,
+.nav-icons a:hover,
+.nav-links a.active {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+  box-shadow: 0 4px 12px rgba(145, 207, 67, 0.4);
+  transform: translateY(-2px);
+}
+
+
+/*
+ * ==========================================================
+ *  4. THANH TÌM KIẾM - ĐÃ CẬP NHẬT THEO ĐÚNG HÌNH MẪU
+ * ==========================================================
+*/
+
+/* Container chính của form, tạo ra viền và hình dạng viên thuốc */
+.search-form {
+  display: flex; /* Đặt input và button nằm ngang */
+  align-items: center;
+  height: 42px; /* Tăng chiều cao một chút */
+  border: 3px solid var(--primary-green); /* Viền màu xanh */
+  border-radius: 50px; /* Bo tròn để tạo hình viên thuốc */
+  overflow: hidden; /* Cực kỳ quan trọng: cắt các góc của phần tử con */
+  background-color: var(--text-light); /* Nền màu trắng cho phần input */
+  width: 200px; /* Đặt chiều rộng ban đầu cho form */
+  transition: width 0.4s ease-in-out; /* Thêm hiệu ứng chuyển động cho chiều rộng */
+}
+.search-form:focus-within {
+  width: 280px; /* Chiều rộng mới khi người dùng click vào */
+}
+
+/* Ô nhập liệu */
+.search-input {
+  flex-grow: 1; /* Cho phép ô input co giãn chiếm đầy không gian thừa */
+  height: 100%;
+  border: none; /* Bỏ viền mặc định */
+  outline: none; /* Bỏ đường viền khi focus */
+  padding: 0 1rem; /* Khoảng cách cho chữ bên trong */
+  font-size: 0.9rem;
+  background-color: transparent; /* Nền trong suốt để thấy màu trắng của form */
+  color: var(--text-dark);
+}
+/* Style cho chữ "Tìm kiếm" (placeholder) */
+.search-input::placeholder {
+  color: var(--primary-green);
+  opacity: 0.8;
+}
+
+/* Nút bấm tìm kiếm */
+.search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50px; /* Tăng chiều rộng nút một chút */
+  border: none;
+  border-radius: 50px; /* Bo tròn nút */
+  background-color: var(--primary-green); /* Nền nút màu xanh */
+  color: var(--text-light); /* Icon màu trắng */
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.search-button:hover {
+  background-color: #79b433; /* Màu xanh đậm hơn một chút khi hover */
+}
