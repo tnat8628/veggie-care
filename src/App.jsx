@@ -15,7 +15,7 @@ function App() {
         <Router>
           <NavBar/>
           <Routes>
-            <Route path='/' element={<Home/>} />
+            <Route path='/veggie-care' element={<Home/>} />
           </Routes>
           <Footer/>
         </Router>

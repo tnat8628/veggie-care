@@ -29,6 +29,11 @@ const tabsData = [
     content: 'Tại vegie care, chúng tôi mong muốn mang lại từng giá trị hương vị trong từng loại rau củ quả. chính vì vậy, chúng tôi xây dựng dịch vụ dựa trên 5 giá trị cốt lõi: sự tiện lợi thông minh - cung cấp đầy đủ dưỡng chất - sự tươi mới kết hợp với yếu tố truyền thống - cá nhân hoá trải nghiệm - sự chân thành và minh bạch là yếu tố cốt lõi vegie tận tụy trong từng sản phẩm trước khi được giao tận tay bạn.'
   }
 ];
+const boxesData = [
+  { id: 1, number: '01', title: 'Blind Box', description: 'Mô tả sản phẩm' },
+  { id: 2, number: '02', title: 'Gift Box', description: 'Mô tả sản phẩm' },
+  { id: 3, number: '03', title: 'Detox Box', description: 'Mô tả sản phẩm' }
+];
 
 export default function Home() {
 
@@ -141,6 +146,53 @@ export default function Home() {
                   {/* Dòng mô tả */}
                   <p className="package-description">Linh hoạt - Tiện lợi - Theo ý bạn</p>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="box-section">
+          <div className="box-section-container">
+            {/* Tiêu đề cho section (tùy chọn) */}
+            <h2 className="section-title">Các Sản Phẩm Của Vegie</h2>
+
+            {/* Lưới chứa các card */}
+            <div className="box-grid">
+              {boxesData.map((box) => (
+                <div key={box.id} className="product-box-card">
+                  <div className="box-number">{box.number}</div>
+                  <div className="box-content">
+                    <h3 className="box-title">{box.title}</h3>
+                    <p className="box-description">{box.description}</p>
+                    <button className="box-details-button">Xem chi tiết</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="voucher-section">
+          <div className="voucher-container">
+            {/* Cột bên trái (40%) */}
+            <div className="voucher-info">
+              <h2 className="voucher-title">
+                Các Ưu Đãi Trong Tuần <br />
+                Giành Cho Bạn
+              </h2>
+              <ul className="voucher-list">
+                <li>Miễn phí vận chuyển cho đơn hàng đầu tiên</li>
+                <li>Miễn phí ship nội thành với đơn hàng đặt trước 17h mỗi ngày</li>
+                <li>Miễn phí vận chuyển cả tuần khi mua gói theo tuần</li>
+              </ul>
+            </div>
+
+            {/* Cột bên phải (60%) */}
+            <div className="voucher-display">
+              <div className="voucher-card-row">
+                <div className="voucher-card small"></div>
+                <div className="voucher-card small"></div>
+              </div>
+              <div className="voucher-card medium">GIẢM 10% PHÍ VẬN CHUYỂN</div>
+              <div className="voucher-card large">VOUCHER GIẢM GIÁ 20%</div>
+              <button className="voucher-details-button">Xem chi tiết</button>
             </div>
           </div>
         </section>
