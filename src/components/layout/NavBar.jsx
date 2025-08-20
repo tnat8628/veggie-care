@@ -34,7 +34,7 @@ const NavBar = () => {
                     <ul className="nav-icons">
                         <li><Link to="/gio-hang"><FiShoppingCart /></Link></li>
                         <li><Link to="/thong-bao"><FiBell /></Link></li>
-                        <li><Link to="/tai-khoan"><FiUser /></Link></li>
+                        <li><Link to="/dang-nhap" title="Đăng nhập"><FiUser /></Link></li>
                     </ul>
 
                     
