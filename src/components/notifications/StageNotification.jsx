@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../../css/PasswordRecoverySuccess.css';
+import '../../css/StageNotification.css';
 import mascot from '../../assets/mascot-smile.png';
 
-const PasswordRecoverySuccess = () => {
+const StageNotification = () => {
   const navigate = useNavigate();
 
   const handleBackToLogin = () => {
@@ -11,13 +11,13 @@ const PasswordRecoverySuccess = () => {
   };
 
   return (
-    <div className="recovery-success-page">
-      <div className="recovery-success-container">    
-        <div className="recovery-success-card">
-          <div className="recovery-success-header">
+    <div className="stage-notification-page">
+      <div className="stage-notification-container">    
+        <div className="stage-notification-card">
+          <div className="stage-notification-header">
             <h2>Khôi Phục Mật Khẩu Thành Công</h2>
           </div>
-          <div className="recovery-success-hello">
+          <div className="stage-notification-title">
             <p> VEGIE XIN CHÀO</p>
           </div>
           
@@ -25,9 +25,8 @@ const PasswordRecoverySuccess = () => {
             <img src={mascot} alt="Veggie Mascot" className="mascot-image" />
           </div>
           
-          
           <div className="button-container">
-            <button onClick={handleBackToLogin} className="recovery-success-button">
+            <button onClick={handleBackToLogin} className="stage-notification-button">
               Quay lại đăng nhập
             </button>
           </div>
@@ -37,4 +36,4 @@ const PasswordRecoverySuccess = () => {
   );
 };
 
-export default PasswordRecoverySuccess;
+export default StageNotification;

@@ -13,7 +13,7 @@ const PasswordRecovery = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Navigate to the success page when the form is submitted
-    navigate('/password-recovery-success');
+    navigate('/stage-notification');
   };
 
   return (
