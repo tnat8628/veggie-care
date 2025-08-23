@@ -7,7 +7,7 @@ const StageNotification = () => {
   const navigate = useNavigate();
 
   const handleBackToLogin = () => {
-    navigate('/login');
+    navigate('/dang-nhap');
   };
 
   return (

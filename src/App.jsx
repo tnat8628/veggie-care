@@ -8,6 +8,7 @@ import NavBar from './components/layout/NavBar'
 import Footer from './components/layout/Footer'
 import StageNotification from './components/notifications/StageNotification'
 import PasswordRecovery from './components/auth/PasswordRecovery'
+import Register from './components/auth/Register'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path='/dang-nhap' element={<Login/>} />
             <Route path='/khoi-phuc-mat-khau' element={<PasswordRecovery/>} />
             <Route path='/stage-notification' element={<StageNotification/>} />
+            <Route path='/dang-ky' element={<Register/>}/>
           </Routes>
           <Footer/>
         </Router>
