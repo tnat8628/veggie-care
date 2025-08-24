@@ -10,14 +10,14 @@ const NavBar = () => {
             <nav className="navbar-container">
                 {/* 1. Logo */}
                 <div className="navbar-logo">
-                    <Link to="/">
+                    <Link to="/veggie-care">
                         <img src={logo} alt="Vegie Logo" />
                     </Link>
                 </div>
 
                 {/* 2. Các liên kết chính */}
                 <ul className="nav-links">
-                    <li><NavLink to="/gioi-thieu">Giới Thiệu</NavLink></li>
+                    <li><NavLink to="/veggie-care">Giới Thiệu</NavLink></li>
                     <li><NavLink to="/san-pham">Sản Phẩm</NavLink></li>
                     <li><NavLink to="/blog">Blog</NavLink></li>
                 </ul>
@@ -34,7 +34,7 @@ const NavBar = () => {
                     <ul className="nav-icons">
                         <li><Link to="/gio-hang"><FiShoppingCart /></Link></li>
                         <li><Link to="/thong-bao"><FiBell /></Link></li>
-                        <li><Link to="/tai-khoan"><FiUser /></Link></li>
+                        <li><Link to="/login"><FiUser /></Link></li>
                     </ul>
 
                     
