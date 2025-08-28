@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../css/StageNotification.css';
-import mascot from '../../assets/mascot-smile.png';
+import mascot from '../../assets/images/mascot-smile.png';
 
 const StageNotification = () => {
   const navigate = useNavigate();

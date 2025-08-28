@@ -10,12 +10,11 @@
 .login-left-section {
   position: relative;
   flex: 1;
-  padding: 2rem 2rem 2rem 0rem;
+  margin: 2rem 2rem 2rem 0rem;
 }
 
 .login-left-card{
   min-height: 80vh;
-  padding: 10rem;
   justify-content:space-between ;
   align-items: center;
   display: flex;
@@ -25,17 +24,36 @@
   overflow: hidden;
   background-color: #D0E9FE;
   border-radius: 0 30% 30% 0;
-  background-image: url("../assets/mascot-normal-mouth.png");
-  background-repeat: no-repeat;
-  background-size:80% ;
-  background-position: bottom left;
+  padding-right: 4rem;
+  margin-right: -6rem;
+  padding-bottom: 10rem;
+}
+
+.veggie-logo {
+  position: relative;
+}
+
+.logo{
+  position: absolute;
+  top: 70%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transition: transform 1s ease-in-out;
+}
+
+.veggie-logo:hover .logo{
+  transform: scale(1.4);
 }
 
 .veggie-logo h1 {
   font-size: 14rem;
   color: #27600B;
   font-weight: bold;
-  margin-bottom: 3rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -46,31 +64,24 @@
   margin-top: 1rem;
   position: relative;
   z-index: 2;
+  margin-bottom: 8rem;
 }
 
 
 
 .mascot-text {
   font-size: 1.4rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
   color: #27600B;
-  font-weight: 500;
+  font-weight: 300;
 }
 
-.register-link-btn {
-  background-color: #27600B;
-  color: white;
-  padding: 0.75rem 2.5rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
-}
-
-.register-link-btn:hover {
-  background-color: #1e4d09;
+.register-link-btn{
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 8rem;
+  overflow: hidden;
 }
 
 .login-right-section {
@@ -79,6 +90,7 @@
   justify-content: center;
   align-items:center;
   padding: 2rem;
+  height: 100vh;
 }
 
 .login-right-card {

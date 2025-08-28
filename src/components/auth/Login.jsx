@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/Login.css';
-import mascotImage from '../../assets/mascot-normal-mouth.png';
+import '../../css/Common.css';
+import mascotImage from '../../assets/images/mascot-normal-mouth.png';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,14 @@ const Login = () => {
             <h1>Vegie</h1>
             <div className="mascot-container">
               <p className="mascot-text">Bạn Chưa Có Tài Khoản?</p>
-              <Link to="/dang-ky" className="register-link-btn">Đăng ký</Link>
+              <Link to="/dang-ky" className="d-btn d-btn-font register-link-btn">
+              <span>Đăng ký</span></Link>
+            </div>
+            <div className="logo">
+              <img 
+              src={mascotImage}
+              alt="Mascot image"
+              className ="logo-c"></img>
             </div>
           </div>
         </div>
@@ -67,11 +75,11 @@ const Login = () => {
             
             <div className= "form-actions">
 
-              <button type="submit" className="login-button">
-                Đăng nhập
+              <button type="submit" className="d-btn-font d-btn">
+                <span>Đăng nhập</span>
               </button>
-              <Link to="/khoi-phuc-mat-khau" className="forgot-password-link">
-              Quên mật khẩu?
+              <Link to="/khoi-phuc-mat-khau" className="d-btn-font d-btn">
+                <span>Quên mật khẩu? </span>
               </Link>
             </div>
           </form>

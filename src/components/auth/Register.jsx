@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom'
+import '../../css/Common.css';
 
 const Register = () => {
     const [formData, setFormData ] = useState({
@@ -7,7 +8,7 @@ const Register = () => {
         phoneNunmber: '',
         email:'',
         password:'',
-        passwordConfirm:'',
+        passwordConfirm:'', 
         coupon:''
     });
 
