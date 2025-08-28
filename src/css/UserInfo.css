@@ -1,0 +1,101 @@
+:root { --green:#2b7a0b; --green-dark:#1e6e12; }
+
+/* Water droplet ripple from bottom center */
+.btn, .menu-btn { position: relative; overflow: hidden; z-index: 0; }
+.btn::before, .menu-btn::before { content: none; }
+.btn::after, .menu-btn::after {
+  content: ""; position: absolute; left: 50%; bottom: 0;
+  width: 14px; height: 14px; border-radius: 999px; background: var(--green-dark);
+  transform: translate(-50%, 50%) scale(0); transition: transform .45s ease-out;
+  z-index: -1;
+}
+.btn:hover::after, .menu-btn:hover::after { transform: translate(-50%, 50%) scale(90); }
+.btn:hover, .menu-btn:hover { color: #ffffff; border-color: var(--green-dark); }
+
+/* Slow, symmetric ripple and synced color transitions */
+.btn, .menu-btn { transition: color .65s ease-in-out, border-color .65s ease-in-out, background-color .65s ease-in-out; }
+.btn::after, .menu-btn::after { transition: transform .65s ease-in-out; }
+
+/* Use variables for existing colors */
+.username { color: var(--green); }
+.menu-btn.is-active { background: var(--green); color: #fff; }
+.user-title { color: var(--green); }
+.form-field input:focus { border-color: var(--green); box-shadow: 0 0 0 3px #2b7a0b22; }
+.btn { color: var(--green); }
+
+.user-info {
+  padding: 40px 16px;
+  background: #ffffff;
+}
+
+.user-info__container { max-width: 1200px; margin: 0 auto; }
+
+.user-layout { display: grid; grid-template-columns: 300px 1fr; gap: 24px; }
+
+@media (max-width: 992px) {
+  .user-layout { grid-template-columns: 1fr; }
+}
+
+/* Sidebar */
+.user-sidebar {
+  background: #dbeefc;
+  border-radius: 24px;
+  padding: 28px 20px;
+}
+.avatar-circle {
+  width: 160px; height: 160px; border-radius: 9999px;
+  background: #ffffff; border: 2px solid transparent;
+  margin: 0 auto;
+}
+.username { text-align: center; margin: 16px 0 12px; color: #2b7a0b; font-weight: 800; font-size: 20px; }
+.sidebar-menu { display: grid; gap: 12px; }
+.menu-btn {
+  height: 40px; border-radius: 999px; border: 2px solid transparent; cursor: pointer;
+  background: #ffffff; color: #2b7a0b; font-weight: 700; padding: 0 18px;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.menu-btn:hover { background: #2b7a0b; color: #fff; }
+.menu-btn.is-active { background: #2b7a0b; color: #fff; }
+
+/* Content */
+.user-content { }
+.user-panel { background: #dbeefc; border-radius: 24px; padding: 28px 28px 40px; display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start; min-height: 560px; }
+@media (max-width: 992px) { .user-panel { grid-template-columns: 1fr; } }
+
+.user-title {
+  grid-column: 1 / -1; margin: 0 0 8px; color: #2b7a0b; font-weight: 800; font-size: 32px;
+  border-bottom: 4px solid #2b7a0b33; padding-bottom: 12px;
+}
+
+.photo-block { display: grid; place-items: center; gap: 12px; }
+.photo-circle { width: 220px; height: 220px; border-radius: 999px; background: #fff; border: 2px solid transparent; }
+.btn-upload { width: 140px; }
+
+/* Form */
+.info-form { display: grid; gap: 12px; }
+.form-row { display: grid; gap: 12px; }
+.form-row.two { grid-template-columns: 1fr 1fr; }
+.form-row.one { grid-template-columns: 1fr; }
+@media (max-width: 640px) { .form-row.two { grid-template-columns: 1fr; } }
+
+.form-field label { display: block; font-weight: 700; color: #2b7a0b; margin-bottom: 6px; }
+.form-field input {
+  width: 100%; height: 44px; border-radius: 999px; border: 2px solid transparent; padding: 0 16px; outline: none; background: #fff;
+}
+.form-field input:focus { border-color: #2b7a0b; box-shadow: 0 0 0 3px #2b7a0b22; }
+.form-field input::placeholder { color: #8a97a0; opacity: 1; }
+
+.form-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.right-actions { display: flex; gap: 12px; }
+
+/* Buttons base */
+.btn { height: 40px; padding: 0 20px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; font-weight: 700; background: #ffffff; color: #2b7a0b; transition: background .2s ease, color .2s ease; }
+.btn:hover { background: #2b7a0b; color: #ffffff; }
+.btn-primary { }
+.btn-danger { }
+.btn-ghost { }
+
+.user-panel.user-panel--single { grid-template-columns: 1fr; }
+.info-form--wide .form-row.one { grid-template-columns: 1fr; }
+.info-form--wide .form-field input { width: 100%; }
+.form-actions.align-right { justify-content: flex-end; } 
